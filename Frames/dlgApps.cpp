@@ -2,33 +2,23 @@
 #pragma hdrstop
 //---------------------------------------------------------------------------
 
-#include "dlgOptions.h"
+#include "dlgApps.h"
 //---------------------------------------------------------------------------
 
 #pragma package(smart_init)
 #pragma resource "*.fmx"
 //---------------------------------------------------------------------------
 
-TFormOptions *FormOptions;
+TFormApps *FormApps;
 //---------------------------------------------------------------------------
 
-__fastcall TFormOptions::TFormOptions(TComponent* Owner)
+__fastcall TFormApps::TFormApps(TComponent* Owner)
 	: TForm(Owner)
 {
-	// Init - Functions
-	this->SetFrames();
 }
 //---------------------------------------------------------------------------
 
-__fastcall TFormOptions::~TFormOptions()
+__fastcall TFormApps::~TFormApps()
 {
-	delete this->m_pFormApps;
-}
-//---------------------------------------------------------------------------
-
-void TFormOptions::SetFrames(void)
-{
-	this->m_pFormApps = new TFormApps(this);
-	this->m_pFormApps->layMain->Parent = this->tiApps;
 }
 //---------------------------------------------------------------------------

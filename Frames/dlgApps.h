@@ -1,35 +1,27 @@
-#ifndef dlgOptionsH
-#define dlgOptionsH
-//---------------------------------------------------------------------------
-
-#include "dlgApps.h"
+#ifndef dlgAppsH
+#define dlgAppsH
 //---------------------------------------------------------------------------
 
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
 #include <FMX.Forms.hpp>
-#include <FMX.TabControl.hpp>
+#include <FMX.Layouts.hpp>
+#include <FMX.ListBox.hpp>
 #include <FMX.Types.hpp>
 //---------------------------------------------------------------------------
 
-class TFormOptions : public TForm
+class TFormApps : public TForm
 {
 __published:	// Von der IDE verwaltete Komponenten
-	TTabControl *tcOptions;
-	TTabItem *tiApps;
+	TLayout *layMain;
+	TListBox *lbApps;
 private:	// Benutzer-Deklarationen
-	// Data - "Frames"
-	TFormApps *m_pFormApps = 0;
-
-	// Functions
-	void SetFrames(void);
-
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor
-	__fastcall TFormOptions(TComponent* Owner);
-	__fastcall ~TFormOptions();
+	__fastcall TFormApps(TComponent* Owner);
+	__fastcall ~TFormApps();
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TFormOptions *FormOptions;
+extern PACKAGE TFormApps *FormApps;
 //---------------------------------------------------------------------------
 #endif

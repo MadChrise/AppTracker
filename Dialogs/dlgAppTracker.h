@@ -18,11 +18,22 @@
 #include <FireDAC.UI.Intf.hpp>
 #include <FireDAC.Comp.UI.hpp>
 #include <FireDAC.FMXUI.Wait.hpp>
+#include <FMX.Layouts.hpp>
+#include <FMX.Menus.hpp>
+#include <FMX.Types.hpp>
 //---------------------------------------------------------------------------
 
 class TFormAppTracker : public TForm
 {
 __published:	// Von der IDE verwaltete Komponenten
+	TLayout *layMain;
+	TMainMenu *MainMenu;
+	TMenuItem *miFile;
+	TMenuItem *miClose;
+	TMenuItem *miTools;
+	TMenuItem *miOptions;
+	void __fastcall miCloseClick(TObject *Sender);
+	void __fastcall miOptionsClick(TObject *Sender);
 private:	// Benutzer-Deklarationen
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor

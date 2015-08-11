@@ -8,4 +8,31 @@ object FormAppTracker: TFormAppTracker
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
+  object layMain: TLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object MainMenu: TMainMenu
+    Left = 304
+    Top = 224
+    object miFile: TMenuItem
+      Text = '&Datei'
+      object miClose: TMenuItem
+        Locked = True
+        Text = '&Beenden'
+        OnClick = miCloseClick
+      end
+    end
+    object miTools: TMenuItem
+      Text = '&Extras'
+      object miOptions: TMenuItem
+        Locked = True
+        Text = '&Optionen'
+        OnClick = miOptionsClick
+      end
+    end
+  end
 end

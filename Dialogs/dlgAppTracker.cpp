@@ -4,6 +4,10 @@
 
 #include "dlgAppTracker.h"
 #include "CreateDatabase.h"
+#include "dlgOptions.h"
+//---------------------------------------------------------------------------
+
+#include <memory>
 //---------------------------------------------------------------------------
 
 #pragma package(smart_init)
@@ -29,3 +33,19 @@ __fastcall TFormAppTracker::~TFormAppTracker()
 {
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormAppTracker::miCloseClick(TObject *Sender)
+{
+	this->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormAppTracker::miOptionsClick(TObject *Sender)
+{
+	// Create the Dialog
+	std::unique_ptr<TFormOptions> pFormOptions(new TFormOptions(this));
+	// Show it
+	pFormOptions->ShowModal();
+}
+//---------------------------------------------------------------------------
+
