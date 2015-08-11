@@ -38,7 +38,7 @@ class MyDBConnection
 
 		// Function
 		static std::pair<TFDConnection*, TFDQuery*> GetConnection(void);
-		static void ClearConnection(TFDConnection *pConnection, TFDQuery *pQuery);
+		static void ClearConnection(std::pair<TFDConnection*, TFDQuery*> paConnection);
 };
 //---------------------------------------------------------------------------
 #endif

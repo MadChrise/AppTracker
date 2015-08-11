@@ -16,6 +16,9 @@ __published:	// Von der IDE verwaltete Komponenten
 	TLayout *layMain;
 	TListBox *lbApps;
 private:	// Benutzer-Deklarationen
+	// Functions
+	void Set(void);
+
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor
 	__fastcall TFormApps(TComponent* Owner);

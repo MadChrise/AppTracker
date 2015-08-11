@@ -32,11 +32,11 @@ pair<TFDConnection*, TFDQuery*> MyDBConnection::GetConnection()
 }
 //---------------------------------------------------------------------------
 
-void MyDBConnection::ClearConnection(TFDConnection *pConnection, TFDQuery *pQuery)
+void MyDBConnection::ClearConnection(pair<TFDConnection*, TFDQuery*> paConnection)
 {
-	pQuery->Close();
-	pConnection->Close();
-	delete pQuery;
-	delete pConnection;
+	paConnection.second->Close();
+	paConnection.first->Close();
+	delete paConnection.second;
+	delete paConnection.first;
 }
 //---------------------------------------------------------------------------
