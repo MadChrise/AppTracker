@@ -7,9 +7,9 @@
 #pragma hdrstop
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
+USEFORM("Dialogs\dlgOptions.cpp", FormOptions);
 USEFORM("Dialogs\dlgAppTracker.cpp", FormAppTracker);
 USEFORM("Frames\dlgApps.cpp", FormApps);
-USEFORM("Dialogs\dlgOptions.cpp", FormOptions);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {

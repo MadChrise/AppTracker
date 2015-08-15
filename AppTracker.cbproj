@@ -346,6 +346,10 @@
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="App\MyAppList.cpp">
+            <DependentOn>App\MyAppList.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
         <CppCompile Include="App\TApp.cpp">
             <DependentOn>App\TApp.h</DependentOn>
             <BuildOrder>7</BuildOrder>
@@ -379,9 +383,9 @@
         <None Include="Templates\MyTemplates.h">
             <BuildOrder>8</BuildOrder>
         </None>
+        <FormResources Include="Dialogs\dlgOptions.fmx"/>
         <FormResources Include="Dialogs\dlgAppTracker.fmx"/>
         <FormResources Include="Frames\dlgApps.fmx"/>
-        <FormResources Include="Dialogs\dlgOptions.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -854,13 +858,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Android">True</Platform>
