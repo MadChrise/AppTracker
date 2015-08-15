@@ -8,8 +8,8 @@
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
 USEFORM("Dialogs\dlgAppTracker.cpp", FormAppTracker);
-USEFORM("Dialogs\dlgOptions.cpp", FormOptions);
 USEFORM("Frames\dlgApps.cpp", FormApps);
+USEFORM("Dialogs\dlgOptions.cpp", FormOptions);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {

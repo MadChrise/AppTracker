@@ -23,8 +23,84 @@ object FormApps: TFormApps
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
+      OnItemClick = lbAppsItemClick
       Viewport.Width = 213.000000000000000000
       Viewport.Height = 476.000000000000000000
+    end
+    object edtAppID: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 4
+      Position.X = 216.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lblID: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Margins.Left = 2.000000000000000000
+        Size.Width = 167.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claGray
+        Text = 'ID'
+      end
+    end
+    object edtAppTypeID: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 216.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lblAppTypeID: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Margins.Left = 2.000000000000000000
+        Size.Width = 167.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claGray
+        Text = 'AppTypeID'
+      end
+    end
+    object edtAppname: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 2
+      Position.X = 216.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lblAppname: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Margins.Left = 2.000000000000000000
+        Size.Width = 167.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claGray
+        Text = 'Appname'
+      end
+    end
+    object edtProcessname: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 216.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object lblProcessname: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Margins.Left = 2.000000000000000000
+        Size.Width = 167.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claGray
+        Text = 'Prozessname'
+      end
     end
   end
 end

@@ -116,7 +116,7 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <AUP_ACCESS_FINE_LOCATION>true</AUP_ACCESS_FINE_LOCATION>
         <AUP_CALL_PHONE>true</AUP_CALL_PHONE>
-        <ILINK_LibraryPath>Frames\;Fames\;Database\;Dialogs\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <AUP_ACCESS_COARSE_LOCATION>true</AUP_ACCESS_COARSE_LOCATION>
         <Multithreaded>true</Multithreaded>
         <AUP_CAMERA>true</AUP_CAMERA>
@@ -129,7 +129,7 @@
         <AUP_WRITE_EXTERNAL_STORAGE>true</AUP_WRITE_EXTERNAL_STORAGE>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <AllPackageLibs>rtl.lib;fmx.lib;dbrtl.lib;FireDAC.lib;FireDACSqliteDriver.lib;FireDACCommonDriver.lib;FireDACCommon.lib;xmlrtl.lib;fmxFireDAC.lib</AllPackageLibs>
-        <IncludePath>Frames\;Fames\;Database\;Dialogs\;$(IncludePath)</IncludePath>
+        <IncludePath>Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(IncludePath)</IncludePath>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <ProjectType>FmxGuiApplication</ProjectType>
         <AUP_INTERNET>true</AUP_INTERNET>
@@ -346,6 +346,10 @@
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="App\TApp.cpp">
+            <DependentOn>App\TApp.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Database\CreateDatabase.cpp">
             <DependentOn>Database\CreateDatabase.h</DependentOn>
             <BuildOrder>3</BuildOrder>
@@ -372,9 +376,12 @@
             <DependentOn>Frames\dlgApps.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
+        <None Include="Templates\MyTemplates.h">
+            <BuildOrder>8</BuildOrder>
+        </None>
         <FormResources Include="Dialogs\dlgAppTracker.fmx"/>
-        <FormResources Include="Dialogs\dlgOptions.fmx"/>
         <FormResources Include="Frames\dlgApps.fmx"/>
+        <FormResources Include="Dialogs\dlgOptions.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -847,12 +854,12 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
