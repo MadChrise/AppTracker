@@ -7,7 +7,8 @@ class TApp
 	private:
 		// Data
 		int m_nID = 0;
-		int m_nAppTypeID =0;
+		int m_nAppTypeID = 0;
+		int m_nSecondsPlayed = 0;
 		String m_strAppname = "";
 		String m_strProcessname = "";
 		String m_strAppType = "";
@@ -29,6 +30,7 @@ class TApp
 		__property bool bDeleted = { read=m_bDeleted, write=m_bDeleted };
 		__property int nID = { read=m_nID, write=m_nID };
 		__property int nAppTypeID = { read=m_nAppTypeID, write=m_nAppTypeID };
+		__property int nSecondsPlayed = { read=m_nSecondsPlayed, write=m_nSecondsPlayed };
 		__property String strAppname = { read=m_strAppname, write=m_strAppname };
 		__property String strProcessname = { read=m_strProcessname, write=m_strProcessname };
 		__property String strAppType = { read=m_strAppType };

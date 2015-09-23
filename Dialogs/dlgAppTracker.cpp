@@ -55,7 +55,7 @@ void __fastcall TFormAppTracker::tiStartTrackingTimer(TObject *Sender)
 	// Deactivate the timer
 	this->tiStartTracking->Enabled = false;
 	// Create a new Instance of TTracker
-	this->m_pTracker = new TTracker();
+	this->m_pTracker = new TTracker(this->Memo);
 	// And start Tracking
 	this->m_pTracker->Start();
 }

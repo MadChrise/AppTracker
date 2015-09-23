@@ -104,3 +104,24 @@ void TDBWriter::DeleteApp(int nAppID)
 	MyDBConnection::ClearConnection(paConnection);
 }
 //---------------------------------------------------------------------------
+
+void TDBWriter::AddPlayedTime(vector<TApp*> vApps)
+{
+	pair<TFDConnection*, TFDQuery*> paConnection = MyDBConnection::GetConnection();
+	TFDConnection *pConnection = paConnection.first;
+	TFDQuery *pQuery = paConnection.second;
+
+	for(auto pApp : vApps)
+	{
+		if (pApp->nSecondsPlayed > 0)
+		{
+			int nID = TDBWriter::GetNextID("playTime", pConnection, pQuery);
+			pQuery->SQL->Add("INSERT INTO playTime VALUES(" + IntToStr(nID) + ", " + IntToStr(pApp->nID) + ", " + IntToStr(static_cast<int>(Now().Val)) + ", " + IntToStr(pApp->nSecondsPlayed) + ");");
+			pQuery->ExecSQL();
+		}
+	}
+
+	// Clear the Database connection
+	MyDBConnection::ClearConnection(paConnection);
+}
+//---------------------------------------------------------------------------

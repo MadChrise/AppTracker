@@ -24,6 +24,9 @@
 #include <FMX.Layouts.hpp>
 #include <FMX.Menus.hpp>
 #include <FMX.Types.hpp>
+#include <FMX.Controls.Presentation.hpp>
+#include <FMX.Memo.hpp>
+#include <FMX.ScrollBox.hpp>
 //---------------------------------------------------------------------------
 
 class TFormAppTracker : public TForm
@@ -36,6 +39,7 @@ __published:	// Von der IDE verwaltete Komponenten
 	TMenuItem *miTools;
 	TMenuItem *miOptions;
 	TTimer *tiStartTracking;
+	TMemo *Memo;
 	void __fastcall miCloseClick(TObject *Sender);
 	void __fastcall miOptionsClick(TObject *Sender);
 	void __fastcall tiStartTrackingTimer(TObject *Sender);

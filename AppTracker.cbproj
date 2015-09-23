@@ -323,6 +323,7 @@
         <LinkPackageImports>rtl.bpi;fmx.bpi;dbrtl.bpi;FireDAC.bpi;FireDACSqliteDriver.bpi;FireDACCommonDriver.bpi;FireDACCommon.bpi;xmlrtl.bpi;fmxFireDAC.bpi</LinkPackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <_TCHARMapping>char</_TCHARMapping>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
         <VerInfo_Locale>1033</VerInfo_Locale>
