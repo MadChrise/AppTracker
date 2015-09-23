@@ -102,7 +102,7 @@ void __fastcall TFormApps::btnDeleteClick(TObject *Sender)
 	// If Yes -> Delete the App from the Database
 	if (mr == mrYes)
 	{
-		TDBWriter::DeleteApp(pApp->nAppTypeID);
+		TDBWriter::DeleteApp(pApp->nID);
 		pApp->bDeleted = true;
 		this->lbApps->Items->Delete(this->lbApps->ItemIndex);
 	}
