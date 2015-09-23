@@ -7,8 +7,8 @@
 #pragma hdrstop
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
-USEFORM("Dialogs\dlgAppTracker.cpp", FormAppTracker);
 USEFORM("Dialogs\dlgEditApp.cpp", FormEditApp);
+USEFORM("Dialogs\dlgAppTracker.cpp", FormAppTracker);
 USEFORM("Frames\dlgApps.cpp", FormApps);
 USEFORM("Dialogs\dlgOptions.cpp", FormOptions);
 //---------------------------------------------------------------------------

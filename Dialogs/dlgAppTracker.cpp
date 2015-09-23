@@ -49,3 +49,9 @@ void __fastcall TFormAppTracker::miOptionsClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormAppTracker::tiStartTrackingTimer(TObject *Sender)
+{
+	//
+}
+//---------------------------------------------------------------------------
+

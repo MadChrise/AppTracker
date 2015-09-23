@@ -118,7 +118,7 @@
         <SubProcessesNumber>8</SubProcessesNumber>
         <AUP_ACCESS_FINE_LOCATION>true</AUP_ACCESS_FINE_LOCATION>
         <AUP_CALL_PHONE>true</AUP_CALL_PHONE>
-        <ILINK_LibraryPath>Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>Tracker\;Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <AUP_ACCESS_COARSE_LOCATION>true</AUP_ACCESS_COARSE_LOCATION>
         <Multithreaded>true</Multithreaded>
         <AUP_CAMERA>true</AUP_CAMERA>
@@ -131,7 +131,7 @@
         <AUP_WRITE_EXTERNAL_STORAGE>true</AUP_WRITE_EXTERNAL_STORAGE>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <AllPackageLibs>rtl.lib;fmx.lib;dbrtl.lib;FireDAC.lib;FireDACSqliteDriver.lib;FireDACCommonDriver.lib;FireDACCommon.lib;xmlrtl.lib;fmxFireDAC.lib</AllPackageLibs>
-        <IncludePath>Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(IncludePath)</IncludePath>
+        <IncludePath>Tracker\;Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(IncludePath)</IncludePath>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <ProjectType>FmxGuiApplication</ProjectType>
         <AUP_INTERNET>true</AUP_INTERNET>
@@ -409,6 +409,10 @@
         <None Include="Templates\MyTemplates.h">
             <BuildOrder>8</BuildOrder>
         </None>
+        <CppCompile Include="Tracker\TTracker.cpp">
+            <DependentOn>Tracker\TTracker.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
         <FormResources Include="Dialogs\dlgEditApp.fmx"/>
         <FormResources Include="Dialogs\dlgAppTracker.fmx"/>
         <FormResources Include="Frames\dlgApps.fmx"/>

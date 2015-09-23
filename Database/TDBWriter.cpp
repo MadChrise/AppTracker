@@ -55,6 +55,8 @@ int TDBWriter::GetNextID(String strTable, TFDConnection *pConnection, TFDQuery *
 		MyDBConnection::ClearConnection(paConnection);
 	else
 		pQuery->SQL->Clear();
+
+	return nID;
 }
 //---------------------------------------------------------------------------
 

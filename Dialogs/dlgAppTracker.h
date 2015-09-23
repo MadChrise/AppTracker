@@ -32,8 +32,10 @@ __published:	// Von der IDE verwaltete Komponenten
 	TMenuItem *miClose;
 	TMenuItem *miTools;
 	TMenuItem *miOptions;
+	TTimer *tiStartTracking;
 	void __fastcall miCloseClick(TObject *Sender);
 	void __fastcall miOptionsClick(TObject *Sender);
+	void __fastcall tiStartTrackingTimer(TObject *Sender);
 private:	// Benutzer-Deklarationen
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor

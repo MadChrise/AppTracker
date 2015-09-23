@@ -16,8 +16,8 @@ object FormAppTracker: TFormAppTracker
     TabOrder = 0
   end
   object MainMenu: TMainMenu
-    Left = 304
-    Top = 224
+    Left = 232
+    Top = 272
     object miFile: TMenuItem
       Text = '&Datei'
       object miClose: TMenuItem
@@ -34,5 +34,11 @@ object FormAppTracker: TFormAppTracker
         OnClick = miOptionsClick
       end
     end
+  end
+  object tiStartTracking: TTimer
+    Interval = 5000
+    OnTimer = tiStartTrackingTimer
+    Left = 144
+    Top = 144
   end
 end

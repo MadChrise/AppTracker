@@ -88,7 +88,17 @@ void TFormEditApp::Get(void)
 
 void __fastcall TFormEditApp::btnUebernehmenClick(TObject *Sender)
 {
-//
+	// Check if all required fields are filled
+	if (this->CheckRequiredFields() == true)
+	{
+		// Get the data, save the new Object
+		this->Get();
+		// Clear the fields
+		this->edtAppname->Text = "";
+		this->edtProcessname->Text = "";
+		// And create a new TApp-Object
+		this->m_pApp = new TApp();
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -97,7 +107,9 @@ void __fastcall TFormEditApp::btnOkClick(TObject *Sender)
 	// Check if all required fields are filled
 	if (this->CheckRequiredFields() == true)
 	{
+		// Get the data, save the new Object
 		this->Get();
+		// ModalResult
 		this->ModalResult = mrOk;
 	}
 }
