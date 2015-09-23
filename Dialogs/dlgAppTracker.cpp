@@ -31,6 +31,7 @@ __fastcall TFormAppTracker::TFormAppTracker(TComponent* Owner)
 
 __fastcall TFormAppTracker::~TFormAppTracker()
 {
+	delete this->m_pTracker;
 }
 //---------------------------------------------------------------------------
 
@@ -51,7 +52,12 @@ void __fastcall TFormAppTracker::miOptionsClick(TObject *Sender)
 
 void __fastcall TFormAppTracker::tiStartTrackingTimer(TObject *Sender)
 {
-	//
+	// Deactivate the timer
+	this->tiStartTracking->Enabled = false;
+	// Create a new Instance of TTracker
+	this->m_pTracker = new TTracker();
+	// And start Tracking
+	this->m_pTracker->Start();
 }
 //---------------------------------------------------------------------------
 

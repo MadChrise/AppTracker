@@ -2,6 +2,9 @@
 #define dlgAppTrackerH
 //---------------------------------------------------------------------------
 
+#include "TTracker.h"
+//---------------------------------------------------------------------------
+
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
 #include <FMX.Forms.hpp>
@@ -37,6 +40,9 @@ __published:	// Von der IDE verwaltete Komponenten
 	void __fastcall miOptionsClick(TObject *Sender);
 	void __fastcall tiStartTrackingTimer(TObject *Sender);
 private:	// Benutzer-Deklarationen
+	// Data
+	TTracker *m_pTracker = 0;
+
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor
 	__fastcall TFormAppTracker(TComponent* Owner);
