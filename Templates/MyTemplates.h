@@ -11,8 +11,8 @@ class MyTemplates
 		template<typename T>
 		static void ClearVector(std::vector<T*> vec)
 		{
-			for(typename std::vector<T*>::iterator it = vec.begin(); it != vec.end(); ++it)
-				delete (*it);
+			for(auto it : vec)
+				delete it;
 
 			vec.clear();
 		}

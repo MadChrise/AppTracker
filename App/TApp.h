@@ -6,24 +6,32 @@ class TApp
 {
 	private:
 		// Data
-		int m_nID;
-		int m_nAppTypeID;
-		String m_strAppname;
-		String m_strProcessname;
-		String m_strAppType;
+		int m_nID = 0;
+		int m_nAppTypeID =0;
+		String m_strAppname = "";
+		String m_strProcessname = "";
+		String m_strAppType = "";
+		//
+		bool m_bNew = false;
+		bool m_bEdited = false;
+		bool m_bDeleted = false;
 
 	public:
 		// Constructor, Copyconstructor, Destructor
+		TApp();
 		TApp(int nID, int nAppTypeID, String strAppname, String strProcessname);
 		TApp(const TApp &app);
 		~TApp();
 
 		// Properties
-		const int nID() { return m_nID; }
-		const int nAppTypeID() { return m_nAppTypeID; }
-		const String &strAppname() { return m_strAppname; };
-		const String &strProcessname() { return m_strProcessname; };
-		const String &strAppType() { return m_strAppType; };
+		__property bool bNew = { read=m_bNew, write=m_bNew };
+		__property bool bEdited = { read=m_bEdited, write=m_bEdited };
+		__property bool bDeleted = { read=m_bDeleted, write=m_bDeleted };
+		__property int nID = { read=m_nID, write=m_nID };
+		__property int nAppTypeID = { read=m_nAppTypeID, write=m_nAppTypeID };
+		__property String strAppname = { read=m_strAppname, write=m_strAppname };
+		__property String strProcessname = { read=m_strProcessname, write=m_strProcessname };
+		__property String strAppType = { read=m_strAppType };
 };
 //---------------------------------------------------------------------------
 #endif

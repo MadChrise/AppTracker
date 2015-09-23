@@ -30,7 +30,7 @@ object FormApps: TFormApps
     object edtAppID: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 4
-      Position.X = 216.000000000000000000
+      Position.X = 220.000000000000000000
       Size.Width = 169.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
@@ -48,7 +48,7 @@ object FormApps: TFormApps
     object edtAppTypeID: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 3
-      Position.X = 216.000000000000000000
+      Position.X = 220.000000000000000000
       Position.Y = 32.000000000000000000
       Size.Width = 169.000000000000000000
       Size.Height = 22.000000000000000000
@@ -67,7 +67,7 @@ object FormApps: TFormApps
     object edtAppname: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 2
-      Position.X = 216.000000000000000000
+      Position.X = 220.000000000000000000
       Position.Y = 64.000000000000000000
       Size.Width = 169.000000000000000000
       Size.Height = 22.000000000000000000
@@ -86,7 +86,7 @@ object FormApps: TFormApps
     object edtProcessname: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 1
-      Position.X = 216.000000000000000000
+      Position.X = 220.000000000000000000
       Position.Y = 96.000000000000000000
       Size.Width = 169.000000000000000000
       Size.Height = 22.000000000000000000
@@ -101,6 +101,23 @@ object FormApps: TFormApps
         TextSettings.FontColor = claGray
         Text = 'Prozessname'
       end
+    end
+    object btnAdd: TButton
+      Position.X = 220.000000000000000000
+      Position.Y = 128.000000000000000000
+      TabOrder = 6
+      Text = 'Add'
+      OnClick = btnAddClick
+    end
+    object btnDelete: TButton
+      Position.X = 220.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Delete'
+      OnClick = btnDeleteClick
     end
   end
 end

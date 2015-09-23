@@ -1,57 +1,61 @@
-#ifndef dlgAppsH
-#define dlgAppsH
+#ifndef dlgEditAppH
+#define dlgEditAppH
 //---------------------------------------------------------------------------
 
 #include "TApp.h"
+#include "TAppType.h"
 //---------------------------------------------------------------------------
 
 #include <System.Classes.hpp>
 #include <FMX.Controls.hpp>
 #include <FMX.Forms.hpp>
-#include <FMX.Layouts.hpp>
-#include <FMX.ListBox.hpp>
-#include <FMX.Types.hpp>
 #include <FMX.Controls.Presentation.hpp>
-#include <FMX.Edit.hpp>
+#include <FMX.Layouts.hpp>
 #include <FMX.StdCtrls.hpp>
+#include <FMX.Types.hpp>
+#include <FMX.Edit.hpp>
+#include <FMX.ListBox.hpp>
 //---------------------------------------------------------------------------
 
 #include <vector>
 //---------------------------------------------------------------------------
 
-class TFormApps : public TForm
+class TFormEditApp : public TForm
 {
 __published:	// Von der IDE verwaltete Komponenten
-	TLayout *layMain;
-	TListBox *lbApps;
-	TEdit *edtAppID;
-	TEdit *edtAppTypeID;
+	TLayout *layOk;
+	TButton *btnAbbrechen;
+	TButton *btnOk;
+	TButton *btnUebernehmen;
+	TComboBox *cbAppType;
+	TLabel *lblTyp;
 	TEdit *edtAppname;
 	TEdit *edtProcessname;
-	TLabel *lblID;
 	TLabel *lblAppname;
-	TLabel *lblAppTypeID;
 	TLabel *lblProcessname;
-	TButton *btnAdd;
-	TButton *btnDelete;
-	void __fastcall lbAppsItemClick(TCustomListBox * const Sender, TListBoxItem * const Item);
-	void __fastcall btnAddClick(TObject *Sender);
-	void __fastcall btnDeleteClick(TObject *Sender);
-
+	void __fastcall btnUebernehmenClick(TObject *Sender);
+	void __fastcall btnOkClick(TObject *Sender);
+	void __fastcall btnAbbrechenClick(TObject *Sender);
 private:	// Benutzer-Deklarationen
+	// Data
+	TApp *m_pApp;
 	// Data - Vector
-	std::vector<TApp*> m_vApps;
+	std::vector<TAppType*> m_vAppTypes;
+	// Data - Function pointers
+	void (__closure* m_pAddApp)(TApp*);
 
 	// Functions
 	void Set(void);
-	void AddApp(TApp *pApp);
+	void SetComboBoxAppType(void);
+	bool CheckRequiredFields(void);
+	void Get(void);
 
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor
-	__fastcall TFormApps(TComponent* Owner);
-	__fastcall ~TFormApps();
+	__fastcall TFormEditApp(TComponent* Owner, TApp *pApp, void (__closure* pAddApp)(TApp*));
+	__fastcall ~TFormEditApp();
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TFormApps *FormApps;
+extern PACKAGE TFormEditApp *FormEditApp;
 //---------------------------------------------------------------------------
 #endif

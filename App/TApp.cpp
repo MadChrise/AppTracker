@@ -8,6 +8,12 @@
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 
+TApp::TApp()
+{
+	this->m_bNew = true;
+}
+//---------------------------------------------------------------------------
+
 TApp::TApp(int nID, int nAppTypeID, String strAppname, String strProcessname)
 	: m_nID(nID),
 	m_nAppTypeID(nAppTypeID),
