@@ -1,0 +1,26 @@
+object FormAppStatus: TFormAppStatus
+  Left = 0
+  Top = 0
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object layMain: TLayout
+    Align = Horizontal
+    Size.Width = 640.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lblApp: TLabel
+      Align = Left
+      AutoSize = True
+      Size.Width = 39.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'lblApp'
+    end
+  end
+end
