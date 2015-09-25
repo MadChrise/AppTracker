@@ -115,7 +115,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <RunBCCOutOfProcess>true</RunBCCOutOfProcess>
-        <SubProcessesNumber>8</SubProcessesNumber>
+        <SubProcessesNumber>2</SubProcessesNumber>
         <AUP_ACCESS_FINE_LOCATION>true</AUP_ACCESS_FINE_LOCATION>
         <AUP_CALL_PHONE>true</AUP_CALL_PHONE>
         <ILINK_LibraryPath>Tracker\;Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -323,9 +323,9 @@
         <LinkPackageImports>rtl.bpi;fmx.bpi;dbrtl.bpi;FireDAC.bpi;FireDACSqliteDriver.bpi;FireDACCommonDriver.bpi;FireDACCommon.bpi;xmlrtl.bpi;fmxFireDAC.bpi</LinkPackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
         <_TCHARMapping>char</_TCHARMapping>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
-        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <LinkPackageImports>rtl.bpi;fmx.bpi;dbrtl.bpi;FireDAC.bpi;FireDACSqliteDriver.bpi;FireDACCommonDriver.bpi;FireDACCommon.bpi;xmlrtl.bpi;fmxFireDAC.bpi</LinkPackageImports>
@@ -407,6 +407,18 @@
             <DependentOn>Frames\dlgApps.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Frames\dlgAppStatus.cpp">
+            <Form>FormAppStatus</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>Frames\dlgAppStatus.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\dlgSummary.cpp">
+            <Form>FormSummary</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>Frames\dlgSummary.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
         <None Include="Templates\MyTemplates.h">
             <BuildOrder>8</BuildOrder>
         </None>
@@ -416,8 +428,10 @@
         </CppCompile>
         <FormResources Include="Dialogs\dlgEditApp.fmx"/>
         <FormResources Include="Dialogs\dlgAppTracker.fmx"/>
-        <FormResources Include="Frames\dlgApps.fmx"/>
         <FormResources Include="Dialogs\dlgOptions.fmx"/>
+        <FormResources Include="Frames\dlgApps.fmx"/>
+        <FormResources Include="Frames\dlgAppStatus.fmx"/>
+        <FormResources Include="Frames\dlgSummary.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -449,6 +463,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp230.bpl">Embarcadero C++Builder-Package für Office XP-Server</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\christian.artinger\Documents\tmssoftware\businessseattle\remotedb\packages\dseattle\..\bpl\Win32\dclremotedb230.bpl">Datei C:\Users\christian.artinger\Documents\tmssoftware\businessseattle\remotedb\packages\dseattle\..\bpl\Win32\dclremotedb230.bpl nicht gefunden</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="2">
@@ -544,27 +559,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -918,12 +918,27 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>

@@ -35,21 +35,54 @@ object FormAppTracker: TFormAppTracker
       end
     end
   end
-  object Memo: TMemo
-    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-    DataDetectorTypes = []
-    Align = Client
-    Size.Width = 640.000000000000000000
-    Size.Height = 480.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 3
-    Viewport.Width = 636.000000000000000000
-    Viewport.Height = 476.000000000000000000
-  end
   object tiStartTracking: TTimer
     Interval = 5000
     OnTimer = tiStartTrackingTimer
     Left = 144
     Top = 144
+  end
+  object TabControl: TTabControl
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 6
+    TabPosition = PlatformDefault
+    object tiRunningApps: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 99.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Laufende Apps'
+      object Memo: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 454.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 636.000000000000000000
+        Viewport.Height = 450.000000000000000000
+      end
+    end
+    object tiAppStatus: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 77.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'App Status'
+    end
   end
 end

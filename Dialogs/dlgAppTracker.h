@@ -2,6 +2,7 @@
 #define dlgAppTrackerH
 //---------------------------------------------------------------------------
 
+#include "dlgSummary.h"
 #include "TTracker.h"
 //---------------------------------------------------------------------------
 
@@ -27,6 +28,7 @@
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.Memo.hpp>
 #include <FMX.ScrollBox.hpp>
+#include <FMX.TabControl.hpp>
 //---------------------------------------------------------------------------
 
 class TFormAppTracker : public TForm
@@ -40,12 +42,20 @@ __published:	// Von der IDE verwaltete Komponenten
 	TMenuItem *miOptions;
 	TTimer *tiStartTracking;
 	TMemo *Memo;
+	TTabControl *TabControl;
+	TTabItem *tiRunningApps;
+	TTabItem *tiAppStatus;
 	void __fastcall miCloseClick(TObject *Sender);
 	void __fastcall miOptionsClick(TObject *Sender);
 	void __fastcall tiStartTrackingTimer(TObject *Sender);
 private:	// Benutzer-Deklarationen
 	// Data
 	TTracker *m_pTracker = 0;
+	// Data - Frames
+	TFormSummary *m_pFormSummary = 0;
+
+	// Functions
+	void SetFrame(void);
 
 public:		// Benutzer-Deklarationen
 	// Constructor + Destructor

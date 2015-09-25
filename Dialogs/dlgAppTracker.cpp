@@ -20,18 +20,32 @@ TFormAppTracker *FormAppTracker;
 __fastcall TFormAppTracker::TFormAppTracker(TComponent* Owner)
 	: TForm(Owner)
 {
+	// On startup always the first tab is selected
+	this->TabControl->ActiveTab = this->tiRunningApps;
+
 	// Check if "AppTracker.sdb" exists and if not -> Create it
 	if (FileExists("AppTracker.sdb") == false)
 	{
 		CreateDatabase cd;
 		cd.Create();
 	}
+
+	// Init - Functions
+	this->SetFrame();
 }
 //---------------------------------------------------------------------------
 
 __fastcall TFormAppTracker::~TFormAppTracker()
 {
 	delete this->m_pTracker;
+	delete this->m_pFormSummary;
+}
+//---------------------------------------------------------------------------
+
+void TFormAppTracker::SetFrame(void)
+{
+	this->m_pFormSummary = new TFormSummary(this);
+	this->m_pFormSummary->layMain->Parent = this->tiAppStatus;
 }
 //---------------------------------------------------------------------------
 

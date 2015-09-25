@@ -9,8 +9,10 @@
 //---------------------------------------------------------------------------
 USEFORM("Dialogs\dlgEditApp.cpp", FormEditApp);
 USEFORM("Dialogs\dlgAppTracker.cpp", FormAppTracker);
-USEFORM("Frames\dlgApps.cpp", FormApps);
 USEFORM("Dialogs\dlgOptions.cpp", FormOptions);
+USEFORM("Frames\dlgApps.cpp", FormApps);
+USEFORM("Frames\dlgAppStatus.cpp", FormAppStatus);
+USEFORM("Frames\dlgSummary.cpp", FormSummary);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {
