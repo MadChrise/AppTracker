@@ -13,7 +13,6 @@ USEFORM("Dialogs\dlgAppTracker.cpp", FormAppTracker);
 USEFORM("Dialogs\dlgEditApp.cpp", FormEditApp);
 USEFORM("Frames\dlgAppStatus.cpp", FormAppStatus);
 USEFORM("Frames\dlgSummary.cpp", FormSummary);
-USEFORM("Frames\dlgEinstellungen.cpp", FormEinstellungen);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {
