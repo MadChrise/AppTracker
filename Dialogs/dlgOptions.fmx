@@ -22,10 +22,25 @@ object FormOptions: TFormOptions
         end>
       IsSelected = True
       Size.Width = 47.000000000000000000
-      Size.Height = 24.000000000000000000
+      Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = ''
       TabOrder = 0
       Text = 'Apps'
+      ExplicitSize.cx = 47.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+    end
+    object tiEinstellungen: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 90.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Einstellungen'
     end
   end
 end

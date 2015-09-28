@@ -17,6 +17,7 @@ class TFormOptions : public TForm
 __published:	// Von der IDE verwaltete Komponenten
 	TTabControl *tcOptions;
 	TTabItem *tiApps;
+	TTabItem *tiEinstellungen;
 private:	// Benutzer-Deklarationen
 	// Data - "Frames"
 	TFormApps *m_pFormApps = 0;

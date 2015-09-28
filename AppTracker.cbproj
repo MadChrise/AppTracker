@@ -413,6 +413,12 @@
             <DependentOn>Frames\dlgAppStatus.h</DependentOn>
             <BuildOrder>14</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Frames\dlgEinstellungen.cpp">
+            <Form>FormEinstellungen</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>Frames\dlgEinstellungen.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Frames\dlgSummary.cpp">
             <Form>FormSummary</Form>
             <FormType>fmx</FormType>
@@ -432,6 +438,7 @@
         <FormResources Include="Dialogs\dlgEditApp.fmx"/>
         <FormResources Include="Frames\dlgAppStatus.fmx"/>
         <FormResources Include="Frames\dlgSummary.fmx"/>
+        <FormResources Include="Frames\dlgEinstellungen.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
