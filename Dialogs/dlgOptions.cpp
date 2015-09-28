@@ -23,12 +23,17 @@ __fastcall TFormOptions::TFormOptions(TComponent* Owner)
 __fastcall TFormOptions::~TFormOptions()
 {
 	delete this->m_pFormApps;
+	delete this->m_pFormEinstellungen;
 }
 //---------------------------------------------------------------------------
 
 void TFormOptions::SetFrames(void)
 {
+	// Apps
 	this->m_pFormApps = new TFormApps(this);
 	this->m_pFormApps->layMain->Parent = this->tiApps;
+	// Preferences
+	this->m_pFormEinstellungen = new TFormEinstellungen(this);
+	this->m_pFormEinstellungen->layMain->Parent = this->tiEinstellungen;
 }
 //---------------------------------------------------------------------------

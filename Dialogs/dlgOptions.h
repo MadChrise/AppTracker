@@ -3,6 +3,7 @@
 //---------------------------------------------------------------------------
 
 #include "dlgApps.h"
+#include "dlgEinstellungen.h"
 //---------------------------------------------------------------------------
 
 #include <System.Classes.hpp>
@@ -21,6 +22,7 @@ __published:	// Von der IDE verwaltete Komponenten
 private:	// Benutzer-Deklarationen
 	// Data - "Frames"
 	TFormApps *m_pFormApps = 0;
+	TFormEinstellungen *m_pFormEinstellungen = 0;
 
 	// Functions
 	void SetFrames(void);
