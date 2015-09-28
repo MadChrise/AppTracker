@@ -37,7 +37,12 @@ vector<TApp*> TDBReader::ReadAllApps(void)
 	TFDQuery *pQuery = paConnection.second;
 
 	// select statement
-	pQuery->Open("SELECT * FROM app");
+	String strSQL = "SELECT a.id, a.appTypeID, a.appname, a.processname, SUM(p.playedSeconds) AS playedSeconds";
+	strSQL += " FROM app a";
+	strSQL += " INNER JOIN playtime p ON p.appID = a.id";
+	strSQL += " GROUP BY a.id, a.appTypeID, a.appname, a.processname";
+
+	pQuery->Open(strSQL);
 	pQuery->First();
 
 	// as long as there is data
@@ -48,9 +53,10 @@ vector<TApp*> TDBReader::ReadAllApps(void)
 		int nAppTypeID = pQuery->FieldByName("appTypeID")->AsInteger;
 		String strAppname = pQuery->FieldByName("appname")->AsString;
 		String strProcessname = pQuery->FieldByName("processname")->AsString;
+		int nPlayedSeconds = pQuery->FieldByName("playedSeconds")->AsInteger;
 
 		// create a new Object of type "TApp"
-		TApp *pApp = new TApp(nID, nAppTypeID, strAppname, strProcessname);
+		TApp *pApp = new TApp(nID, nAppTypeID, strAppname, strProcessname, nPlayedSeconds);
 
 		// add the Object to the vector
 		vApps.push_back(pApp);

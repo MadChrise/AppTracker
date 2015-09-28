@@ -115,7 +115,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <RunBCCOutOfProcess>true</RunBCCOutOfProcess>
-        <SubProcessesNumber>2</SubProcessesNumber>
+        <SubProcessesNumber>8</SubProcessesNumber>
         <AUP_ACCESS_FINE_LOCATION>true</AUP_ACCESS_FINE_LOCATION>
         <AUP_CALL_PHONE>true</AUP_CALL_PHONE>
         <ILINK_LibraryPath>Tracker\;Templates\;App\;Frames\;Fames\;Database\;Dialogs\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -426,10 +426,10 @@
             <DependentOn>Tracker\TTracker.h</DependentOn>
             <BuildOrder>13</BuildOrder>
         </CppCompile>
-        <FormResources Include="Dialogs\dlgEditApp.fmx"/>
-        <FormResources Include="Dialogs\dlgAppTracker.fmx"/>
         <FormResources Include="Dialogs\dlgOptions.fmx"/>
         <FormResources Include="Frames\dlgApps.fmx"/>
+        <FormResources Include="Dialogs\dlgAppTracker.fmx"/>
+        <FormResources Include="Dialogs\dlgEditApp.fmx"/>
         <FormResources Include="Frames\dlgAppStatus.fmx"/>
         <FormResources Include="Frames\dlgSummary.fmx"/>
         <BuildConfiguration Include="Release">
@@ -463,7 +463,6 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp230.bpl">Embarcadero C++Builder-Package für Office XP-Server</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\christian.artinger\Documents\tmssoftware\businessseattle\remotedb\packages\dseattle\..\bpl\Win32\dclremotedb230.bpl">Datei C:\Users\christian.artinger\Documents\tmssoftware\businessseattle\remotedb\packages\dseattle\..\bpl\Win32\dclremotedb230.bpl nicht gefunden</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="2">
@@ -559,12 +558,27 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -918,27 +932,12 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>

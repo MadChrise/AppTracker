@@ -113,10 +113,10 @@ void TDBWriter::AddPlayedTime(vector<TApp*> vApps)
 
 	for(auto pApp : vApps)
 	{
-		if (pApp->nSecondsPlayed > 0)
+		if (pApp->nPlayedSecondsSession > 0)
 		{
 			int nID = TDBWriter::GetNextID("playTime", pConnection, pQuery);
-			pQuery->SQL->Add("INSERT INTO playTime VALUES(" + IntToStr(nID) + ", " + IntToStr(pApp->nID) + ", " + IntToStr(static_cast<int>(Now().Val)) + ", " + IntToStr(pApp->nSecondsPlayed) + ");");
+			pQuery->SQL->Add("INSERT INTO playTime VALUES(" + IntToStr(nID) + ", " + IntToStr(pApp->nID) + ", " + IntToStr(static_cast<int>(Now().Val)) + ", " + IntToStr(pApp->nPlayedSecondsSession) + ");");
 			pQuery->ExecSQL();
 		}
 	}

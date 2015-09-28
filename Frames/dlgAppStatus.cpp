@@ -30,6 +30,7 @@ __fastcall TFormAppStatus::~TFormAppStatus()
 
 void TFormAppStatus::Init(void)
 {
-    this->lblApp->Text = this->m_pApp->strAppname;
+	this->lblApp->Text = this->m_pApp->strAppname;
+	this->lblTimePlayed->Text = IntToStr(this->m_pApp->nPlayedSeconds / 60 / 60) + L" Stunden gespielt";
 }
 //---------------------------------------------------------------------------

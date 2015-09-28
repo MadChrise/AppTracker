@@ -68,7 +68,7 @@ void __fastcall TTracker::OnTimerTimer(TObject *Sender)
 			if (strProcess.Trim() == pApp->strProcessname.Trim())
 			{
 				// If it is -> add the time and break
-				pApp->nSecondsPlayed += this->m_pTimer->Interval / 1000;
+				pApp->nPlayedSecondsSession += this->m_pTimer->Interval / 1000;
 				break;
 			}
 		}
@@ -91,6 +91,6 @@ void __fastcall TTracker::OnTimerTimer(TObject *Sender)
 
 void TTracker::Write(TApp *pApp)
 {
-	this->m_pMemo->Lines->Add(pApp->strAppname + L" läuft seit " + IntToStr(pApp->nSecondsPlayed) + L" Sekunden");
+	this->m_pMemo->Lines->Add(pApp->strAppname + L" läuft seit " + IntToStr(pApp->nPlayedSecondsSession) + L" Sekunden");
 }
 //---------------------------------------------------------------------------

@@ -19,6 +19,7 @@ class TFormAppStatus : public TForm
 __published:	// Von der IDE verwaltete Komponenten
 	TLayout *layMain;
 	TLabel *lblApp;
+	TLabel *lblTimePlayed;
 private:	// Benutzer-Deklarationen
 	// Data
 	TApp *m_pApp;

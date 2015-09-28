@@ -22,5 +22,15 @@ object FormAppStatus: TFormAppStatus
       TextSettings.WordWrap = False
       Text = 'lblApp'
     end
+    object lblTimePlayed: TLabel
+      Align = Right
+      AutoSize = True
+      Position.X = 563.000000000000000000
+      Size.Width = 77.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'lblTimePlayed'
+    end
   end
 end
