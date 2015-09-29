@@ -2,6 +2,9 @@
 #define TAppH
 //---------------------------------------------------------------------------
 
+#include <System.hpp>
+//---------------------------------------------------------------------------
+
 class TApp
 {
 	private:
@@ -14,7 +17,7 @@ class TApp
 		int m_nPlayedSeconds;
 		String m_strAppType = "";
 		//
-		bool m_bNew = false;
+		bool m_bNew = true;
 		bool m_bEdited = false;
 		bool m_bDeleted = false;
 

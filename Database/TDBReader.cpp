@@ -39,7 +39,7 @@ vector<TApp*> TDBReader::ReadAllApps(void)
 	// select statement
 	String strSQL = "SELECT a.id, a.appTypeID, a.appname, a.processname, SUM(p.playedSeconds) AS playedSeconds";
 	strSQL += " FROM app a";
-	strSQL += " INNER JOIN playtime p ON p.appID = a.id";
+	strSQL += " LEFT OUTER JOIN playtime p ON p.appID = a.id";
 	strSQL += " GROUP BY a.id, a.appTypeID, a.appname, a.processname";
 
 	pQuery->Open(strSQL);

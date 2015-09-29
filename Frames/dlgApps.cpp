@@ -56,6 +56,8 @@ void TFormApps::AddApp(TApp *pApp)
 	this->m_vApps.push_back(pApp);
 	// And add the App to the ListBox
 	this->lbApps->Items->AddObject(pApp->strAppname, (TObject*)pApp);
+	// Add the App to the database
+	TDBWriter::SaveSingleApp(pApp);
 }
 //---------------------------------------------------------------------------
 
