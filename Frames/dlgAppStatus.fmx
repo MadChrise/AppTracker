@@ -2,46 +2,79 @@ object FormAppStatus: TFormAppStatus
   Left = 0
   Top = 0
   ClientHeight = 480
-  ClientWidth = 640
+  ClientWidth = 696
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object layMain: TLayout
     Align = Horizontal
-    Size.Width = 640.000000000000000000
+    Size.Width = 696.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object lblApp: TLabel
+    object layApp: TLayout
       Align = Left
-      AutoSize = True
-      Size.Width = 39.000000000000000000
+      Size.Width = 305.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.WordWrap = False
-      Text = 'lblApp'
+      TabOrder = 0
+      object lblApp: TLabel
+        Align = Left
+        AutoSize = True
+        StyledSettings = [Family, FontColor]
+        Margins.Left = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Size.Width = 52.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 15.000000000000000000
+        TextSettings.Font.Style = [fsBold]
+        TextSettings.WordWrap = False
+        Text = 'lblApp'
+      end
     end
-    object lblTimePlayed: TLabel
-      Align = Right
-      AutoSize = True
-      Position.X = 563.000000000000000000
-      Size.Width = 77.000000000000000000
+    object layPlayed: TLayout
+      Align = Client
+      Size.Width = 391.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.WordWrap = False
-      Text = 'lblTimePlayed'
-    end
-    object lblLastSession: TLabel
-      Align = Right
-      AutoSize = True
-      Margins.Right = 10.000000000000000000
-      Position.X = 476.000000000000000000
-      Size.Width = 77.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.WordWrap = False
-      Text = 'lblLastSession'
+      TabOrder = 1
+      object layOverall: TLayout
+        Align = Right
+        Position.X = 200.000000000000000000
+        Size.Width = 191.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblTimePlayed: TLabel
+          Align = Right
+          AutoSize = True
+          Position.X = 114.000000000000000000
+          Size.Width = 77.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          Text = 'lblTimePlayed'
+        end
+      end
+      object layLastSession: TLayout
+        Align = Client
+        Size.Width = 200.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblLastSession: TLabel
+          Align = Right
+          AutoSize = True
+          Position.X = 123.000000000000000000
+          Size.Width = 77.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          Text = 'lblLastSession'
+        end
+      end
     end
   end
 end

@@ -24,6 +24,10 @@ __published:	// Von der IDE verwaltete Komponenten
 	TLabel *lblApp;
 	TLabel *lblTimePlayed;
 	TLabel *lblLastSession;
+	TLayout *layApp;
+	TLayout *layPlayed;
+	TLayout *layOverall;
+	TLayout *layLastSession;
 private:	// Benutzer-Deklarationen
 	// Data
 	TApp *m_pApp;
