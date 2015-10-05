@@ -19,6 +19,7 @@ class TDBReader
 
 		// Functions
 		static std::vector<TApp*> ReadAllApps(void);
+		static int ReadLastSession(int nAppID);
 		static std::vector<TAppType*> ReadAllAppTypes(void);
 };
 //---------------------------------------------------------------------------

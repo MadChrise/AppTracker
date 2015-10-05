@@ -20,12 +20,14 @@ __published:	// Von der IDE verwaltete Komponenten
 	TLayout *layMain;
 	TLabel *lblApp;
 	TLabel *lblTimePlayed;
+	TLabel *lblLastSession;
 private:	// Benutzer-Deklarationen
 	// Data
 	TApp *m_pApp;
 
 	// Functions
 	void Init(void);
+
 public:		// Benutzer-Deklarationen
 	// Constructor, Destructor
 	__fastcall TFormAppStatus(TComponent* Owner, TApp *pApp);

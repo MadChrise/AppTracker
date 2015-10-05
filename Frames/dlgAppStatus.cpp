@@ -3,6 +3,7 @@
 //---------------------------------------------------------------------------
 
 #include "dlgAppStatus.h"
+#include "TDBReader.h"
 //---------------------------------------------------------------------------
 
 #pragma package(smart_init)
@@ -30,7 +31,11 @@ __fastcall TFormAppStatus::~TFormAppStatus()
 
 void TFormAppStatus::Init(void)
 {
+	// Read Playtime of the last Session
+	int nLastSession = TDBReader::ReadLastSession(this->m_pApp->nID);
+
 	this->lblApp->Text = this->m_pApp->strAppname;
-	this->lblTimePlayed->Text = IntToStr(this->m_pApp->nPlayedSeconds / 60 / 60) + L" Stunden gespielt";
+	this->lblLastSession->Text = IntToStr(nLastSession / 60 / 60) + L" Stunden";
+	this->lblTimePlayed->Text = IntToStr(this->m_pApp->nPlayedSeconds / 60 / 60) + L" Stunden";
 }
 //---------------------------------------------------------------------------

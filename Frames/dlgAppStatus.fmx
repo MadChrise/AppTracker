@@ -32,5 +32,16 @@ object FormAppStatus: TFormAppStatus
       TextSettings.WordWrap = False
       Text = 'lblTimePlayed'
     end
+    object lblLastSession: TLabel
+      Align = Right
+      AutoSize = True
+      Margins.Right = 10.000000000000000000
+      Position.X = 476.000000000000000000
+      Size.Width = 77.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'lblLastSession'
+    end
   end
 end

@@ -73,6 +73,29 @@ vector<TApp*> TDBReader::ReadAllApps(void)
 }
 //---------------------------------------------------------------------------
 
+int TDBReader::ReadLastSession(int nAppID)
+{
+	int nPlaytime = 0;
+
+	pair<TFDConnection*, TFDQuery*> paConnection = MyDBConnection::GetConnection();
+	TFDConnection *pConnection = paConnection.first;
+	TFDQuery *pQuery = paConnection.second;
+
+	String strSQL = "SELECT playedSeconds";
+	strSQL += " FROM playtime";
+	strSQL += " WHERE appID = " + IntToStr(nAppID);
+	strSQL += " ORDER BY id DESC LIMIT 1";
+
+	pQuery->Open(strSQL);
+	pQuery->First();
+
+	if (pQuery->Eof == false)
+		nPlaytime = pQuery->FieldByName("playedSeconds")->AsInteger;
+
+	return nPlaytime;
+}
+//---------------------------------------------------------------------------
+
 vector<TAppType*> TDBReader::ReadAllAppTypes(void)
 {
 	vector<TAppType*> vAppTypes;
