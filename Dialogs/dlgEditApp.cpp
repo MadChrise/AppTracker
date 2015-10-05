@@ -51,7 +51,7 @@ void TFormEditApp::SetComboBoxAppType(void)
 
 	// Fill the ComboBox with the AppTypes
 	for(auto pAppType : this->m_vAppTypes)
-		this->cbAppType->Items->AddObject(pAppType->strName(), (TObject*)pAppType);
+		this->cbAppType->Items->AddObject(pAppType->strName, (TObject*)pAppType);
 
 	// Select the first Item of the ComboBox
 	this->cbAppType->ItemIndex = 0;
@@ -80,7 +80,7 @@ void TFormEditApp::Get(void)
 	// Get the needed data
 	this->m_pApp->strAppname = this->edtAppname->Text.Trim();
 	this->m_pApp->strProcessname = this->edtProcessname->Text.Trim();
-	this->m_pApp->nAppTypeID = ((TAppType*)this->cbAppType->Items->Objects[this->cbAppType->ItemIndex])->nID();
+	this->m_pApp->nAppTypeID = ((TAppType*)this->cbAppType->Items->Objects[this->cbAppType->ItemIndex])->nID;
 	// and Save the new App
 	this->m_pAddApp(this->m_pApp);
 }

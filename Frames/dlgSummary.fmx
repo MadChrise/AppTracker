@@ -13,5 +13,51 @@ object FormSummary: TFormSummary
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
+    object layFilter: TLayout
+      Align = Top
+      Size.Width = 640.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object edtAppname: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 193.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnEnter = edtAppnameEnter
+        OnExit = edtAppnameExit
+        object lblAppname: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 189.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claGray
+          Text = 'App'
+        end
+      end
+      object cbAppType: TComboBox
+        Position.X = 240.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 177.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object lblAppType: TLabel
+        AutoSize = True
+        Position.X = 216.000000000000000000
+        Position.Y = 11.000000000000000000
+        Size.Width = 23.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        Text = 'Typ'
+      end
+    end
   end
 end

@@ -16,8 +16,8 @@ class TAppType
 		~TAppType();
 
 		// Properties
-		const int nID() { return m_nID; };
-		const String strName() { return m_strName; };
+		__property int nID = { read=m_nID };
+		__property String strName = { read=m_strName };
 };
 //---------------------------------------------------------------------------
 #endif
