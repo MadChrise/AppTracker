@@ -14,6 +14,9 @@
 #include <FMX.StdCtrls.hpp>
 //---------------------------------------------------------------------------
 
+#include <utility>
+//---------------------------------------------------------------------------
+
 class TFormAppStatus : public TForm
 {
 __published:	// Von der IDE verwaltete Komponenten
@@ -26,6 +29,7 @@ private:	// Benutzer-Deklarationen
 	TApp *m_pApp;
 
 	// Functions
+	std::pair<int, int> GetHoursMinutes(int nSeconds);
 	void Init(void);
 
 public:		// Benutzer-Deklarationen
